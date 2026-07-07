@@ -1,0 +1,749 @@
+/* Custom Design System for Farmer Leaf Doctor */
+:root {
+  /* Colors */
+  --bg-primary: #FAF9F5;       /* Soft warm cream background */
+  --text-primary: #1C221E;     /* Deep forest charcoal for high readability */
+  --text-secondary: #4E5952;   /* Soft forest grey */
+  
+  --primary-green: #2E7D32;    /* Earthy forest green */
+  --primary-hover: #1B5E20;    /* Deep farm green */
+  --primary-light: #E8F5E9;    /* Light herbal green for healthy cards */
+  
+  --accent-soil: #8D6E63;      /* Soil brown for structure */
+  --accent-soil-dark: #5D4037; /* Deep earth brown */
+  
+  --accent-gold: #FFB300;      /* Harvest gold */
+  
+  --danger-red: #C62828;       /* Warning red for infections */
+  --danger-light: #FFEBEE;     /* Soft red/pink for alert cards */
+  --warning-orange: #EF6C00;   /* Warning orange for low confidence */
+  --warning-light: #FFF3E0;    /* Soft orange for warning cards */
+  
+  --border-color: #D2DCD5;     /* Light grey-green border */
+  --card-shadow: 0 4px 12px rgba(46, 125, 50, 0.08);
+  --hover-shadow: 0 8px 24px rgba(46, 125, 50, 0.15);
+  
+  /* Fonts */
+  --font-title: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* App Header styling */
+.app-header {
+  background-color: #ffffff;
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.header-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--primary-green);
+}
+
+.app-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  line-height: 1.1;
+}
+
+.app-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* Language Toggle Button styling */
+.lang-toggle-btn {
+  background-color: var(--primary-light);
+  border: 2px solid var(--primary-green);
+  color: var(--primary-green);
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-toggle-btn:hover, .lang-toggle-btn:active {
+  background-color: var(--primary-green);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Main Content layout */
+.main-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Base Card Styling */
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+}
+
+/* Intro Section */
+.intro-section {
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, var(--primary-light) 100%);
+  border-left: 5px solid var(--primary-green);
+}
+
+.intro-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Drag & Drop Upload Zone */
+.drop-zone {
+  border: 3px dashed var(--border-color);
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  background-color: #FAFBF9;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  position: relative;
+}
+
+.drop-zone.dragover {
+  border-color: var(--primary-green);
+  background-color: var(--primary-light);
+  transform: scale(1.01);
+}
+
+.drop-zone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-icon {
+  width: 54px;
+  height: 54px;
+  color: var(--primary-green);
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+
+.drag-label {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.or-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin: 12px 0;
+  letter-spacing: 1px;
+}
+
+/* Upload Action Buttons */
+.upload-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+  max-width: 320px;
+  margin-top: 6px;
+}
+
+/* Custom inputs hidden */
+#cameraInput, #galleryInput {
+  display: none;
+}
+
+/* Button UI */
+.btn {
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s ease-in-out;
+  min-height: 52px; /* Large touch target for farmers */
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-primary {
+  background-color: var(--primary-green);
+  color: #ffffff;
+}
+
+.btn-primary:hover, .btn-primary:active {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(46,125,50,0.2);
+}
+
+.btn-secondary {
+  background-color: var(--accent-soil);
+  color: #ffffff;
+}
+
+.btn-secondary:hover, .btn-secondary:active {
+  background-color: var(--accent-soil-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(141,110,99,0.2);
+}
+
+/* Image Preview styling */
+.preview-container {
+  margin-top: 20px;
+  border-top: 2px solid var(--border-color);
+  padding-top: 20px;
+  text-align: center;
+}
+
+.preview-container h3 {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  aspect-ratio: 1;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.btn-remove {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.7);
+  color: #ffffff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: background-color 0.2s;
+}
+
+.btn-remove:hover {
+  background-color: rgba(239,83,80,0.9);
+}
+
+/* Photo Guidelines Section */
+.guide-section {
+  background-color: #ffffff;
+}
+
+.section-title {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 4px;
+}
+
+.section-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.comparison-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px;
+  background-color: #FAFBF9;
+}
+
+.comparison-card.good {
+  border-top: 4px solid var(--primary-green);
+}
+
+.comparison-card.bad {
+  border-top: 4px solid var(--danger-red);
+}
+
+.comparison-card .image-wrapper {
+  max-width: 100%;
+  width: 100%;
+  aspect-ratio: 4/3;
+  margin-bottom: 10px;
+  border: none;
+}
+
+.comparison-card p {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* Badge for guidelines */
+.badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.badge.success {
+  background-color: var(--primary-green);
+}
+
+.badge.danger {
+  background-color: var(--danger-red);
+}
+
+.badge-icon {
+  width: 12px;
+  height: 12px;
+}
+
+/* Loading screen styling */
+.loading-section {
+  text-align: center;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.pulse-loader {
+  background-color: var(--primary-light);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 1.8s infinite ease-in-out;
+}
+
+.loader-leaf {
+  width: 42px;
+  height: 42px;
+  color: var(--primary-green);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.4);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 20px rgba(46, 125, 50, 0);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(46, 125, 50, 0);
+  }
+}
+
+.loading-section h2 {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  color: var(--primary-green);
+}
+
+.loading-section p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Error warning display card */
+.error-section {
+  border-left: 6px solid var(--warning-orange);
+  background-color: var(--warning-light);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.error-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--warning-orange);
+}
+
+.error-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.error-section h2 {
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.error-text {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Prediction Results card and card types */
+.results-section {
+  width: 100%;
+}
+
+.result-card {
+  border-radius: 18px;
+  border: 2px solid var(--border-color);
+  box-shadow: var(--hover-shadow);
+  background-color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Healthy Crop Card Theme */
+.result-card.healthy {
+  border-color: var(--primary-green);
+}
+
+.result-card.healthy .result-header {
+  background-color: var(--primary-light);
+  border-bottom: 2px solid var(--primary-green);
+}
+
+.result-card.healthy .status-icon-wrapper {
+  color: var(--primary-green);
+}
+
+.result-card.healthy .confidence-badge {
+  background-color: var(--primary-green);
+}
+
+/* Diseased Crop Card Theme */
+.result-card.diseased {
+  border-color: var(--danger-red);
+}
+
+.result-card.diseased .result-header {
+  background-color: var(--danger-light);
+  border-bottom: 2px solid var(--danger-red);
+}
+
+.result-card.diseased .status-icon-wrapper {
+  color: var(--danger-red);
+}
+
+.result-card.diseased .confidence-badge {
+  background-color: var(--danger-red);
+}
+
+/* Result Card Sub-components */
+.result-header {
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.result-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.result-title {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.confidence-badge {
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  align-self: flex-start;
+}
+
+.result-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.result-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.block-label {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border-left: 3px solid var(--accent-soil);
+  padding-left: 8px;
+  letter-spacing: 0.5px;
+}
+
+.block-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  padding-left: 11px;
+}
+
+.remedy-list {
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.remedy-list li {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.result-footer {
+  background-color: var(--bg-primary);
+  padding: 14px 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.disclaimer-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.result-action {
+  padding: 0 20px 20px 20px;
+}
+
+/* How to use section steps */
+.how-to-use {
+  background-color: #ffffff;
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.step-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.step-card:not(:last-child) {
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.step-number {
+  background-color: var(--primary-green);
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.step-title {
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.step-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* About app section */
+.about-section {
+  background-color: var(--primary-light);
+  border-top: 3px solid var(--accent-soil);
+}
+
+.about-text {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* App Footer styling */
+.app-footer {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
+  margin-top: 10px;
+}
+
+/* Desktop Styles */
+@media (min-width: 480px) {
+  .upload-buttons {
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: center;
+  }
+  
+  .btn {
+    width: 210px;
+  }
+  
+  .steps-container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  .step-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    border-bottom: none !important;
+    padding: 10px;
+  }
+  
+  .step-card:not(:last-child) {
+    border-right: 1px dashed var(--border-color);
+  }
+}

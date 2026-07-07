@@ -1,0 +1,152 @@
+{
+  "Tomato_healthy": {
+    "crop": "Tomato",
+    "crop_ta": "தக்காளி",
+    "disease": "Healthy",
+    "disease_ta": "ஆரோக்கியமானது",
+    "cause": "No disease detected. The leaf is healthy.",
+    "cause_ta": "நோய் எதுவும் கண்டறியப்படவில்லை. இலை ஆரோக்கியமாக உள்ளது.",
+    "symptoms": "Green, vibrant leaf with no spots, lesions, or unusual coloration.",
+    "symptoms_ta": "புள்ளிகள், காயங்கள் அல்லது அசாதாரண நிறமாற்றம் இல்லாத பசுமையான இலை.",
+    "remedy": [
+      "Continue regular watering and crop monitoring.",
+      "Maintain good farm hygiene.",
+      "Apply organic compost to support ongoing healthy growth."
+    ],
+    "remedy_ta": [
+      "வழக்கமான நீர் பாசனம் மற்றும் பயிர் கண்காணிப்பைத் தொடரவும்.",
+      "நல்ல பண்ணை சுகாதாரத்தைப் பராமரிக்கவும்.",
+      "ஆரோக்கியமான வளர்ச்சியை ஆதரிக்க இயற்கை உரம் இடவும்."
+    ]
+  },
+  "Tomato_Late_blight": {
+    "crop": "Tomato",
+    "crop_ta": "தக்காளி",
+    "disease": "Late Blight",
+    "disease_ta": "இலைக்கருகல் நோய் (Late Blight)",
+    "cause": "Caused by the water mold Phytophthora infestans which thrives in cool, wet weather.",
+    "cause_ta": "குளிர்ச்சியான, ஈரப்பதமான வானிலையில் செழித்து வளரும் பைட்டோப்தோரா இன்ஃபெஸ்டன்ஸ் என்ற பூஞ்சை போன்ற நுண்ணுயிரியால் ஏற்படுகிறது.",
+    "symptoms": "Dark, water-soaked spots on leaves that turn brown/black, with white fungal growth underneath in humid conditions.",
+    "symptoms_ta": "இலைகளில் கரும்பழுப்பு அல்லது கருப்பு நிற நீர் வடிந்த புள்ளிகள் தோன்றும்; ஈரப்பதமான நிலையில் இலையின் அடியில் வெள்ளை பூஞ்சை வளரும்.",
+    "remedy": [
+      "Remove and destroy infected leaves/plants immediately. Do not compost them.",
+      "Avoid overhead watering to keep foliage dry; water at the base.",
+      "Apply copper-based fungicides or bio-fungicides (e.g., Trichoderma viride) early in the morning.",
+      "Ensure proper spacing between plants for good air circulation."
+    ],
+    "remedy_ta": [
+      "பாதிக்கப்பட்ட இலைகள் மற்றும் செடிகளை உடனடியாக அகற்றி அழிக்கவும். அவற்றை உரமாகப் பயன்படுத்த வேண்டாம்.",
+      "இலைகள் நனையாமல் இருக்க செடியின் வேர்ப் பகுதியில் மட்டும் நீர் பாய்ச்சவும்.",
+      "காலையில் செப்பு சார்ந்த பூஞ்சைக் கொல்லிகள் அல்லது உயிரி பூஞ்சைக் கொல்லிகளை (எ.கா: டிரைக்கோடெர்மா விரிடி) தெளிக்கவும்.",
+      "நல்ல காற்று ஓட்டத்திற்கு செடிகளுக்கு இடையே போதிய இடைவெளி விடவும்."
+    ]
+  },
+  "Tomato_Early_blight": {
+    "crop": "Tomato",
+    "crop_ta": "தக்காளி",
+    "disease": "Early Blight",
+    "disease_ta": "இலையுதிர் கருகல் நோய் (Early Blight)",
+    "cause": "Caused by the fungus Alternaria solani, which survives in soil and crop debris, spreading in warm, wet weather.",
+    "cause_ta": "மண் மற்றும் பயிர் கழிவுகளில் வாழும் ஆல்டர்நேரியா சொலனி என்ற பூஞ்சையால் ஏற்படுகிறது; இது வெப்பமான, ஈரமான வானிலையில் பரவுகிறது.",
+    "symptoms": "Dark brown spots with concentric rings (target-like pattern) appearing first on older lower leaves, which eventually turn yellow and drop off.",
+    "symptoms_ta": "முதிர்ந்த கீழ் இலைகளில் முதலில் வட்டவடிவ வளையங்களுடன் கூடிய கரும்பழுப்பு நிறப் புள்ளிகள் தோன்றும்; பின்னர் இலைகள் மஞ்சளாகி உதிர்ந்துவிடும்.",
+    "remedy": [
+      "Prune lower leaves to prevent soil splash and improve air flow.",
+      "Mulch the soil around the base of the plant to create a barrier.",
+      "Spray organic fungicides like copper oxychloride or Pseudomonas fluorescens solution.",
+      "Rotate crops and do not plant tomatoes or potatoes in the same spot next season."
+    ],
+    "remedy_ta": [
+      "மண் தெளிப்பதைத் தடுக்கவும் காற்று ஓட்டத்தை அதிகரிக்கவும் கீழ் இலைகளை கவாத்து (கத்தரித்தல்) செய்யவும்.",
+      "மண்ணில் இருந்து பூஞ்சை பரவுவதைத் தடுக்க செடியின் அடியில் வைக்கோல் அல்லது காய்ந்த இலைகளால் மூடாக்கு போடவும்.",
+      "காப்பர் ஆக்ஸிகுளோரைடு அல்லது சூடோமோனாஸ் புளோரசன்ஸ் கரைசலைத் தெளிக்கவும்.",
+      "பயிர் சுழற்சி முறையைப் பின்பற்றவும்; அடுத்த பருவம் இதே இடத்தில் தக்காளி அல்லது உருளைக்கிழங்கு நட வேண்டாம்."
+    ]
+  },
+  "Tomato_Bacterial_spot": {
+    "crop": "Tomato",
+    "crop_ta": "தக்காளி",
+    "disease": "Bacterial Spot",
+    "disease_ta": "பாக்டீரியா இலைப்புள்ளி நோய் (Bacterial Spot)",
+    "cause": "Caused by the bacterium Xanthomonas, which spreads through contaminated seeds, soil splash, and wet conditions.",
+    "cause_ta": "சாந்தோமோனாஸ் என்ற பாக்டீரியாவால் ஏற்படுகிறது; இது பாதிக்கப்பட்ட விதைகள், மண் தெளிப்பு மற்றும் ஈரமான சூழ்நிலைகள் மூலம் பரவுகிறது.",
+    "symptoms": "Small, dark, water-soaked spots with yellow halos on leaves, which may become dry, brittle, and develop holes.",
+    "symptoms_ta": "இலைகளில் மஞ்சள் நிற வளையங்களுடன் கூடிய சிறிய, இருண்ட நீர் வடிந்த புள்ளிகள் தோன்றும்; இலைகள் உலர்ந்து, உடையக்கூடியதாகி துளைகள் விழலாம்.",
+    "remedy": [
+      "Use certified disease-free seeds and seedlings.",
+      "Avoid working in the field when plants are wet to prevent spreading the bacteria.",
+      "Spray copper-based bactericides combined with mancozeb, or use a bio-control agent like Bacillus subtilis.",
+      "Clean and sanitize all garden tools after use."
+    ],
+    "remedy_ta": [
+      "சான்றளிக்கப்பட்ட நோயற்ற ஆரோக்கியமான விதைகள் மற்றும் நாற்றுகளைப் பயன்படுத்தவும்.",
+      "பாக்டீரியா பரவாமல் தடுக்க செடிகள் ஈரமாக இருக்கும்போது வயலில் வேலை செய்வதைத் தவிர்க்கவும்.",
+      "காப்பர் பூஞ்சைக்கொல்லியுடன் மேன்கோசெப் கலந்து தெளிக்கவும் அல்லது பேசிலஸ் சப்டிலிஸ் போன்ற உயிரி பூஞ்சைக்கொல்லியைப் பயன்படுத்தவும்.",
+      "பயன்படுத்திய பின் அனைத்து தோட்டக் கருவிகளையும் சுத்தம் செய்து கிருமி நீக்கம் செய்யவும்."
+    ]
+  },
+  "Potato_healthy": {
+    "crop": "Potato",
+    "crop_ta": "உருளைக்கிழங்கு",
+    "disease": "Healthy",
+    "disease_ta": "ஆரோக்கியமானது",
+    "cause": "No disease detected. The leaf is healthy.",
+    "cause_ta": "நோய் எதுவும் கண்டறியப்படவில்லை. இலை ஆரோக்கியமாக உள்ளது.",
+    "symptoms": "Green, vibrant leaf with no spots, lesions, or unusual coloration.",
+    "symptoms_ta": "புள்ளிகள், காயங்கள் அல்லது அசாதாரண நிறமாற்றம் இல்லாத பசுமையான இலை.",
+    "remedy": [
+      "Continue regular watering and soil care.",
+      "Monitor crops weekly for pests or spots.",
+      "Add organic matter to maintain soil nutrients."
+    ],
+    "remedy_ta": [
+      "வழக்கமான நீர் பாசனம் மற்றும் மண் பராமரிப்பைத் தொடரவும்.",
+      "பூச்சிகள் அல்லது புள்ளிகள் உள்ளதா என்று வாரந்தோறும் பயிர்களைக் கண்காணிக்கவும்.",
+      "மண் சத்துக்களைப் பராமரிக்க இயற்கை உரங்களைச் சேர்க்கவும்."
+    ]
+  },
+  "Potato_Late_blight": {
+    "crop": "Potato",
+    "crop_ta": "உருளைக்கிழங்கு",
+    "disease": "Late Blight",
+    "disease_ta": "இலைக்கருகல் நோய் (Late Blight)",
+    "cause": "Caused by the water mold Phytophthora infestans, which affects both tomatoes and potatoes in cool, wet weather.",
+    "cause_ta": "குளிர்ச்சியான, ஈரப்பதமான வானிலையில் தக்காளி மற்றும் உருளைக்கிழங்கு இரண்டையும் பாதிக்கும் பைட்டோப்தோரா இன்ஃபெஸ்டன்ஸ் என்ற நீர் பூஞ்சையால் ஏற்படுகிறது.",
+    "symptoms": "Dark green to black water-soaked spots on leaf tips and margins, expanding rapidly, with white mildew forming on the underside.",
+    "symptoms_ta": "இலையின் நுனிகள் மற்றும் விளிம்புகளில் கரும்பச்சை முதல் கருப்பு நிற நீர் வடிந்த புள்ளிகள் தோன்றி வேகமாகப் பரவும்; இலையின் கீழ் வெள்ளை நிறப் பூஞ்சை படரும்.",
+    "remedy": [
+      "Harvest early or destroy infected vines to prevent the pathogen from reaching the tubers.",
+      "Spray preventive fungicides like copper sulfate or chlorothalonil when weather forecasts predict cool, humid conditions.",
+      "Plant certified disease-free seed potatoes.",
+      "Practice crop rotation with non-solanaceous crops (e.g., corn, beans)."
+    ],
+    "remedy_ta": [
+      "நோய் கிழங்குகளுக்கு பரவாமல் தடுக்க பாதிக்கப்பட்ட கொடிகளை உடனடியாக வெட்டி அகற்றவும் அல்லது முன்கூட்டியே அறுவடை செய்யவும்.",
+      "குளிர்ச்சியான, ஈரப்பதமான வானிலை நிலவும்போது காப்பர் சல்பேட் போன்ற பூஞ்சைக்கொல்லிகளைத் தெளிக்கவும்.",
+      "சான்றளிக்கப்பட்ட நோயற்ற ஆரோக்கியமான விதை உருளைக்கிழங்குகளை மட்டுமே நடவு செய்யவும்.",
+      "சோளம், அவரை போன்ற சோலனேசி அல்லாத பயிர்களுடன் பயிர் சுழற்சி முறையைப் பின்பற்றவும்."
+    ]
+  },
+  "Potato_Early_blight": {
+    "crop": "Potato",
+    "crop_ta": "உருளைக்கிழங்கு",
+    "disease": "Early Blight",
+    "disease_ta": "முன் இலைக்கருகல் நோய் (Early Blight)",
+    "cause": "Caused by the fungus Alternaria solani, which targets older leaves under fluctuating wet and dry conditions.",
+    "cause_ta": "ஈரமான மற்றும் வறண்ட வானிலை மாறி மாறி வரும்போது முதிர்ந்த இலைகளைத் தாக்கும் ஆல்டர்நேரியா சொலனி என்ற பூஞ்சையால் ஏற்படுகிறது.",
+    "symptoms": "Small brown spots with concentric ring patterns (target spots) that enlarge and cause the leaf to die and drop.",
+    "symptoms_ta": "இலைகளில் வட்டவடிவ வளையங்களைக் கொண்ட சிறிய பழுப்பு நிறப் புள்ளிகள் தோன்றி, விரிவடைந்து இலைகளை உலரச் செய்து உதிரச் செய்யும்.",
+    "remedy": [
+      "Maintain adequate soil fertility (especially nitrogen) to keep plants vigorous.",
+      "Apply drip irrigation rather than overhead sprinklers to keep leaves dry.",
+      "Apply copper fungicides or bio-fungicide sprays containing Trichoderma species.",
+      "Destroy crop debris after harvest to prevent the fungus from overwintering."
+    ],
+    "remedy_ta": [
+      "செடிகள் செழித்து வளர போதுமான மண் வளத்தை (குறிப்பாக நைட்ரஜன்) பராமரிக்கவும்.",
+      "இலைகள் உலர்ந்து இருக்க தெளிப்பு நீர் பாசனத்திற்கு பதிலாக சொட்டு நீர் பாசனத்தைப் பயன்படுத்தவும்.",
+      "காப்பர் பூஞ்சைக்கொல்லிகள் அல்லது டிரைக்கோடெர்மா இனங்கள் கொண்ட உயிரி பூஞ்சைக்கொல்லி தெளிப்புகளைப் பயன்படுத்தவும்.",
+      "அறுவடைக்குப் பின் பயிர்க் கழிவுகளை அழித்து பூஞ்சை மண்ணில் தங்குவதைத் தடுக்கவும்."
+    ]
+  }
+}
