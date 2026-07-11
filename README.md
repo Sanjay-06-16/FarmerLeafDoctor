@@ -25,7 +25,8 @@ Tomato: Healthy, Late Blight, Early Blight, Bacterial Spot
 Potato: Healthy, Late Blight, Early Blight
 
 ## Folder Structure
-...
+
+'''
 farmer-leaf-doctor/
 ├── backend/
 │   ├── main.py              # FastAPI server (runs inference & serves static files)
@@ -40,7 +41,8 @@ farmer-leaf-doctor/
 │   ├── script.js
 │   └── assets/
 └── README.md
-...
+'''
+
 ## Setup & Run Locally
 
 ```bash
