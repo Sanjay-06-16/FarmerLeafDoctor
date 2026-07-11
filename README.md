@@ -1,19 +1,31 @@
 # Farmer Leaf Doctor (உழவர் இலை மருத்துவர்)
 
-Farmer Leaf Doctor is a full-stack, mobile-first web application designed for farmers to instantly diagnose diseases in tomato and potato leaves. 
+Farmer Leaf Doctor is a full-stack, mobile-first web application designed for farmers to instantly diagnose diseases in tomato and potato leaves using AI.
 
-It provides:
-- **Bilingual interface** (English & Tamil) togglable with a single tap.
-- **Mobile-first design** with high-contrast, large tap targets, and clean icons.
-- **Direct Camera integration** for snapping leaf pictures in the field, alongside gallery/drag-and-drop uploads.
-- **Treatment advice** (Causes, Symptoms, and Actionable Remedies) translated fully into Tamil and English.
-- **Robust TFLite inference** with quantized/float support and an automatic fallback **Mock Mode** for developers.
+🌐 **Live Demo:** https://farmerleafdoctor-2.onrender.com  
+*(Hosted on free tier — may take 30-60 seconds to wake up on first load)*
 
----
+## Features
+
+- **Bilingual interface** (English & Tamil) togglable with a single tap
+- **Mobile-first design** with high-contrast, large tap targets, and clean icons
+- **Direct camera integration** for snapping leaf pictures in the field, alongside gallery/drag-and-drop uploads
+- **Treatment advice** (causes, symptoms, and actionable remedies) translated fully into Tamil and English
+- **Robust TFLite inference** with a confidence threshold safeguard for uncertain predictions
+
+## Tech Stack
+
+- **Model:** MobileNetV2 (transfer learning), trained on the PlantVillage dataset using TensorFlow/Keras in Google Colab
+- **Backend:** FastAPI + TensorFlow Lite for inference
+- **Frontend:** HTML, CSS, JavaScript — bilingual, mobile-responsive
+- **Deployment:** Render
+
+## Supported Classes (7)
+Tomato: Healthy, Late Blight, Early Blight, Bacterial Spot  
+Potato: Healthy, Late Blight, Early Blight
 
 ## Folder Structure
 
-```text
 farmer-leaf-doctor/
 ├── backend/
 │   ├── main.py              # FastAPI server (runs inference & serves static files)
@@ -21,74 +33,36 @@ farmer-leaf-doctor/
 │   ├── requirements.txt     # Python dependencies
 │   ├── test_predict.py      # Standalone backend verification tests
 │   └── model/
-│       └── [Place leaf_disease_model.tflite here]
+│       └── leaf_disease_model.tflite
 ├── frontend/
-│   ├── index.html           # Main bilingual user interface
-│   ├── style.css            # Custom organic earth styling
-│   ├── script.js            # Frontend logic & bilingual toggle coordinator
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
 │   └── assets/
-│       ├── good_leaf.png    # Example of a correct leaf photo
-│       └── bad_leaf.png     # Example of what to avoid (blurry, far)
 └── README.md
-```
 
----
+## Setup & Run Locally
 
-## 1. Setup & Installation
-
-### Step 1: Install Python Dependencies
-Open PowerShell or your terminal and run:
-```powershell
+```bash
 cd backend
-pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org -r requirements.txt
-```
-*(Note: If you have a working SSL connection, you can omit the `--trusted-host` flags).*
-
-### Step 2: Install TensorFlow or TFLite Runtime
-The backend dynamically loads the model using `tensorflow` or the lighter `tflite-runtime`. You can install either:
-```powershell
-# Option A: Install full TensorFlow (heavier, standard)
+pip install -r requirements.txt
 pip install tensorflow
-
-# Option B: Install tflite-runtime (much lighter, faster install)
-pip install tflite-runtime
-```
-
----
-
-## 2. Upload the Model File
-
-Please place your `leaf_disease_model.tflite` file inside the `backend/model/` folder:
-- **Target File Path**: `backend/model/leaf_disease_model.tflite`
-
-### Mock Mode Fallback (No Model Needed to Test)
-If the model file is not uploaded yet, the backend automatically runs in **Mock Mode**! 
-- Uploading a image file with `"tomato_early"` in its name will mock a **Tomato Early Blight** positive result.
-- Uploading a file with `"potato_late"` will mock **Potato Late Blight**.
-- Uploading a file with `"bad"`, `"low"`, or `"blur"` in its name will mock a **Low Confidence Match (< 60%)** error card, allowing you to test the retake warning card in the UI.
-- All other uploads will select a random disease with a realistic high-confidence score.
-
----
-
-## 3. Running the Application
-
-To start the local FastAPI web server:
-```powershell
-# From the backend directory
 python -m uvicorn main:app --reload --port 8000
 ```
+Open http://localhost:8000
 
-Once started, open your web browser and navigate to:
-👉 **[http://localhost:8000](http://localhost:8000)**
-
-The index page will load directly. Scale down your browser window or open it on a mobile device to see the premium mobile-responsive layout.
-
----
-
-## 4. Verification
-
-To verify that the backend is fully operational (checks file loading, preprocessing, and remedy database outputs):
-```powershell
+## Verification
+```bash
 python backend/test_predict.py
 ```
-This runs standalone assertions in-process and prints the result JSON.
+
+## Challenges Solved
+
+- **Class imbalance:** The training dataset had significant imbalance (e.g., Tomato Late Blight had ~12x more images than Potato Healthy), which biased the model toward over-predicting the majority class. Fixed using `sklearn.utils.class_weight.compute_class_weight` during training.
+- **Preprocessing mismatch:** Training normalized pixels to [-1, 1] (MobileNetV2 standard) but the initial backend implementation used [0, 1] scaling, causing incorrect predictions in production despite a working model. Traced and fixed by aligning backend preprocessing with training exactly.
+- **Windows/TFLite Unicode path bug:** TFLite's interpreter failed to load the model when the project directory path contained non-ASCII characters (a Chinese-localized OneDrive folder name). Resolved by relocating the project to an ASCII-only path.
+- **Overfitting during fine-tuning:** An attempt to fine-tune the pretrained base model caused severe overfitting (99% train accuracy vs. ~10-50% validation accuracy). Reverted to the stable base model and prioritized class balancing over fine-tuning given the dataset size.
+
+## Limitations
+- Trained on the PlantVillage dataset (lab-conditioned, plain-background images); accuracy may be lower on outdoor/field photos with cluttered backgrounds
+- Free-tier hosting has a cold-start delay after inactivity
